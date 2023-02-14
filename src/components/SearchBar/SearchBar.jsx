@@ -4,14 +4,14 @@ import style from "./style.module.css";
 const SearchBar = ({ onSubmit }) => {
 
   function submit(event) {
-    if (condition) {
-      
+    if (event.key === "Enter" && event.target.value.trim() !== "") {
+      onSubmit(event.target.value);
     }
   }
 
   return (
     <>
-      <SearchBar size={27} className={style.icon} />
+      <SearchIcon size={27} className={style.icon} />
       <input
         onKeyUp={submit}
         className={style.input}

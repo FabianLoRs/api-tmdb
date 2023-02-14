@@ -38,4 +38,15 @@ export class TVShowAPI {
       console.log(error);
     }
   }
+
+  static async fetchRecommendations(tvShowId) {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}tv/${tvShowId}/recommendations${API_KEY_PARAM}`
+      );
+      return response.data.results;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
